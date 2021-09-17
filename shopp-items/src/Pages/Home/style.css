@@ -1,0 +1,22 @@
+.Sizediv{
+    background-color: #EDEAF2 !important;
+}
+.NamedivCarousel{
+    margin-top: 60px !important;
+    margin-bottom: 30px;
+}
+.NamedivCarousel1{
+    margin-top: 15px !important;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.TxtAndImgHome{
+    display: flex;
+    justify-content: space-between;
+}
+
+.TitleHome{
+    font-size: 55px;
+    color: #D95843;
+}

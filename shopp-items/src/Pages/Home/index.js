@@ -4,19 +4,23 @@ import Header from "../../Components/Header";
 import Carousels from "../../Components/Carousels";
 import ImgReceptionistHome from "../../Assets/Icons/SelfCheckoutHome.png"
 import Footer from "../../Components/Footer";
+import "./style.css";
 
 export const Home = () =>{
     return(
         <>
         <Header/>
+        <div className="Sizediv">
         <Container>
             <Row>
-                <Col> <Carousels /> </Col>             
+                <Col className="NamedivCarousel"> <Carousels /> </Col>             
             </Row>
 
-            <Row>
-                <Col>
-                    <h2>Titulo</h2>  
+            <Row className="TxtAndImgHome">
+                <Col className="NamedivCarousel">
+                    <div className="NamedivCarousel1">
+                    <h2 className="TitleHome">Titulo</h2>
+                    </div>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
                     <p>industry. Lorem Ipsum has been the industry's standard dummy</p>
                     <p>text ever since the 1500s, when an unknown printer took a galley</p>
@@ -27,9 +31,10 @@ export const Home = () =>{
                     <p>Ipsum passages, and more recently with desktop publishing</p>
                     <p>software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </Col>
-                <Col> <img src={ImgReceptionistHome}/> </Col>
+                <Col className="NamedivCarousel"> <img src={ImgReceptionistHome}/> </Col>
             </Row>
         </Container>
+        </div>
         <Footer />
         </>
     );

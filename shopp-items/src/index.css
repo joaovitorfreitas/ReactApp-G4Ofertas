@@ -2,4 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: 0;
+  
+}
+p {
+  margin-bottom: 0rem !important;
 }

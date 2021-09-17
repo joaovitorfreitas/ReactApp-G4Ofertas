@@ -1,0 +1,25 @@
+.BorderBoxLogin{
+    border: red 3px solid;
+    width: 80%;
+    height: 60vh;
+}
+.BackGroundLogin{
+    width: 100%;
+    height: 97.4vh;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.GroupPwdReg1{
+    display: flex;
+}
+.FundoLogin{
+    background-color: #733BE3;
+    height: 59vh;
+    width: 100%;
+}
+.EmailpwdSide{
+    background-color: #EDEAF2 !important;
+    width: "100%";
+}

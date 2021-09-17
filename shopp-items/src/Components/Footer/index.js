@@ -9,29 +9,32 @@ import "./style.css"
 
 export const Footer = () => {
     return(
-        <>
+        <footer>
         <Navbar className="FooterNavBar">
             <Container>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Services</Nav.Link>
-                    <Nav.Link href="#features">Contatos</Nav.Link>
+                    <Nav.Link href="#home"><p className="FooterStyletxt">Services</p></Nav.Link>
+                    <Nav.Link href="#features"><p className="FooterStyletxt">Contatos</p></Nav.Link>
                     <Navbar.Brand href="#home"> <img src={FooterLogoShop}/> </Navbar.Brand>
                         <div className="IconsFooter">
                             <Nav.Link href="#" disabled>
-                            Redes Sociais:
+                            <p className="FooterStyletxt">Redes Sociais:</p>
                             </Nav.Link>
                             <Nav.Link href="#" >
                                 <img
+                                    className="logotype"
                                     src={FacebookLogo}
                                 />
                             </Nav.Link>
                             <Nav.Link href="#" >
                                 <img
+                                    className="logotype"
                                     src={TwitterLogo}
                                 />
                             </Nav.Link>
                             <Nav.Link href="#" >
                                 <img
+                                    className="logotype"
                                     src={InstagramLogo}
                                 />
                             </Nav.Link>
@@ -39,7 +42,7 @@ export const Footer = () => {
                 </Nav>
             </Container>
         </Navbar>
-        </>
+        </footer>
     );
 }   
 
