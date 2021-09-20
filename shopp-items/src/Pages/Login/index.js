@@ -1,6 +1,6 @@
 import React, { useState }from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import "./style.css"
+import "./styleL.css"
 import { useHistory, Link } from "react-router-dom";
 import axios from 'axios';
 import BannerLogin from "../../Assets/Banner/LoginBanner.png";
@@ -56,17 +56,17 @@ export const Login = () =>{
                     <Row
                         className="RemoveSpacingCad"
                     >
-                        <div className="Fundo">
-                        <Col>
+                       
+                        <Col className="fundo">
                             <img
                                 className="FundoLogin"
                                 src={BannerLogin}
                             />
                         </Col>
-                        </div>
+
                         <Col className="EmailpwdSide">
                         <div style={{marginTop: 20}}>
-                            <h1 style={{color: "#D95843"}}>Login</h1>
+                            <h1 className="LetrasG">Login</h1>
                         </div>
 
                         <Form
@@ -75,14 +75,14 @@ export const Login = () =>{
 
                             <Form.Group className="mb-3" controlId="formBasicEmail" >
                                 <div className="GrouInputLogin">
-                                    <Form.Label style={{color: "#D95843"}}>Email </Form.Label>
+                                    <Form.Label className="LetrasP">Email </Form.Label>
                                     <Form.Control type="email" placeholder="Email" />
                                 </div>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <div className="GrouInputLogin"> 
-                                    <Form.Label style={{color: "#D95843"}}>Senha </Form.Label>
+                                    <Form.Label className="LetrasP">Senha </Form.Label>
                                     <Form.Control type="password" placeholder="Senha" />
                                 </div>
                     
@@ -96,11 +96,11 @@ export const Login = () =>{
 
 
                         <Col className="GroupPwdReg1">
-                                    <p style={{color: "#D95843"}}>Esqueceu a Senha ?</p>
+                                    <p className="LetrasP">Esqueceu a Senha?</p>
                                     <Link to="/about" className="LinkName"> Clique Aqui</Link>
                                 </Col>
                                 <Col className="GroupPwdReg1">
-                                    <p style={{color: "#D95843"}}>Não tem um Login ?</p>
+                                    <p className="LetrasP">Não tem um Login?</p>
                                     <Link to="/about" className="LinkName">Cadastra-se</Link>
                                 </Col>
                         </Col>

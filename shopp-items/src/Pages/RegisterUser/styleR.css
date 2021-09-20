@@ -1,6 +1,16 @@
+@font-face {
+    font-family: 'Caviar';
+    src:  url('../../fontes/CaviarDreams.ttf') format('truetype');
+
+  };
+
+
+
 .BorderBoxLogin{
     width: 80%;
-    height: 60vh;
+    height: 59vh;
+    background-color: #EDEAF2 ;
+    border-radius: 20PX;
 }
 .BorderBoxCad{
     width: 80%;
@@ -15,18 +25,21 @@
     align-items: center;
 }
 
+
 .GroupPwdReg1{
     display: flex;
 }
 .FundoLogin{
-    background-color: #733BE3;
+    background-color: #BCA4EC;
     height: 59vh;
     width: 100%;
+    border-radius: 20PX;
 }
 .FundoCad{
-    background-color: #733BE3;
+    background-color: #BCA4EC;
     height: 67vh;
     width: 100%;
+    border-radius: 20PX;
 }
 .EmailpwdSide{
     background-color: #EDEAF2 !important;
@@ -34,13 +47,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-radius: 20PX;
 }
 .mb-3{
     width: 100%;
     display: flex;
     justify-content: center;
     width: 100%;
-
+    margin-left: 15px;
 }
 .GrouInputLogin{
     display: flex;
@@ -69,6 +83,7 @@
     color: #fff;
     background-color: #733BE3;
     border-color: #733BE3;
+    font-family: 'Caviar';
 }
 #formBasicEmail{
     border-color: #733BE3;
@@ -85,4 +100,25 @@
 .LinkName{
     color: #733BE3;
     padding-left: 5px;
+}
+.LetrasG{
+    font-family: 'Caviar';
+    color: #D95843;
+    font-weight: bold;
+}
+.LetrasP{
+   font-family: 'Caviar';
+    color: #D95843;
+    font-size: 30;
+}
+.LetrasM{
+    font-family: 'Caviar';
+    color: #D95843;
+    font-size: 30;
+    margin-top: 2em;
+}
+.btnCad{
+    margin-top: 2em;
+    margin-left: 3em;
+    margin-bottom: 2em;
 }
