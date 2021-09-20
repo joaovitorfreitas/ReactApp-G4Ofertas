@@ -1,11 +1,10 @@
-import React from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import Header from "../../Components/Header";
 import Carousels from "../../Components/Carousels";
 import ImgReceptionistHome from "../../Assets/Icons/SelfCheckoutHome.png"
 import Footer from "../../Components/Footer";
 import "./style.css";
-
+            
 export const Home = () =>{
     return(
         <>

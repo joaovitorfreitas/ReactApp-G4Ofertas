@@ -11,7 +11,7 @@ export const Footer = () => {
     return(
         <footer>
         <Navbar className="FooterNavBar">
-            <Container>
+            <Container className="BorderFooter">
                 <Nav className="me-auto">
                     <Nav.Link href="#home"><p className="FooterStyletxt">Services</p></Nav.Link>
                     <Nav.Link href="#features"><p className="FooterStyletxt">Contatos</p></Nav.Link>
@@ -20,7 +20,8 @@ export const Footer = () => {
                             <Nav.Link href="#" disabled>
                             <p className="FooterStyletxt">Redes Sociais:</p>
                             </Nav.Link>
-                            <Nav.Link href="#" >
+                            <div className="BorderIcons">
+                            <Nav.Link href="#">
                                 <img
                                     className="logotype"
                                     src={FacebookLogo}
@@ -38,6 +39,7 @@ export const Footer = () => {
                                     src={InstagramLogo}
                                 />
                             </Nav.Link>
+                            </div>
                         </div>
                 </Nav>
             </Container>
