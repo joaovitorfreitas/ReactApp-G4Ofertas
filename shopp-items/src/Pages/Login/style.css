@@ -9,11 +9,12 @@
 .BackGroundLogin{
     width: 100%;
     height: 97.4vh;
-    background-color: purple;
+    background-image: linear-gradient(180deg, #733BE3, black);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .GroupPwdReg1{
     display: flex;
 }

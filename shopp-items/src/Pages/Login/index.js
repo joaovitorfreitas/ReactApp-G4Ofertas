@@ -56,12 +56,14 @@ export const Login = () =>{
                     <Row
                         className="RemoveSpacingCad"
                     >
+                        <div className="Fundo">
                         <Col>
                             <img
                                 className="FundoLogin"
                                 src={BannerLogin}
                             />
                         </Col>
+                        </div>
                         <Col className="EmailpwdSide">
                         <div style={{marginTop: 20}}>
                             <h1 style={{color: "#D95843"}}>Login</h1>
