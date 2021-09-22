@@ -73,8 +73,6 @@ class Perfil extends Component {
                                         <button type="submit">Salvar</button>
                                     </form>  
                                 </div>
-
-
                         <div>
                             
                         </div>

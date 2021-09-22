@@ -44,38 +44,30 @@ class Usuario extends Component {
 
     render(){
         return(
-            <div>
+            <>
                 <main>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Imagem</th>
-                            <th>titulo</th>
-                            <th>descricao</th>
-                            <th>quantidade</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div>
+                    <div>
                         {
                             this.state.listaProduto.map((Produto) =>{
                                 return(
-                                    <tr key={Usuario.idProduto}>
-                                        <td>{Usuario.imagem}</td>
-                                        <td>{Usuario.titulo}</td>
-                                        <td>{Usuario.descricao}</td> 
-                                        <td>{Usuario.quantidade}</td>                                               
-                                    </tr>                                         
+                                    <div key={Produto.idProduto}>
+                                        <image src={Produto.imagem}/>
+                                        <div className="linha"></div>
+                                        <h1>{Produto.titulo}</h1>
+                                        <p>{Produto.descricao}</p> 
+                                        <p>{Produto.quantidade}</p>                                               
+                                    </div>                                         
                                     )                                      
                                 }                                  
                             )                                            
                         }
-                        </tbody>
+                        </div>
 
-                    </table> 
                     <button onClick={this.ReservarProduto}>Reservar</button>
+                    </div> 
                 </main>
-            </div>
+            </>
         )
     }
 }
