@@ -7,7 +7,9 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Cad from './Pages/RegisterUser';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
-import Usuario from './Pages/Usuario/Usuario';
+
+import Produto from './Pages/Produto/Produto';
+import Perfil from './Pages/Perfil/Perfil';
 
 
 const routing = (
@@ -17,7 +19,8 @@ const routing = (
         <Route path = "/home" component={Home}/>
         <Route path = "/Login" component={Login}/>
         <Route path = "/Cadastro" component={Cad}/>
-        <Route path = "/Usuario" component={Usuario}/>
+        <Route path = "/perfil" component={Perfil}/>
+        <Route path = "/Produto" component={Produto}/>
       </Switch>
   </Router>
 )
