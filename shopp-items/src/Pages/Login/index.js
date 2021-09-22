@@ -101,7 +101,7 @@ export const Login = () =>{
                                 </Col>
                                 <Col className="GroupPwdReg1">
                                     <p className="LetrasP">Não tem um Login?</p>
-                                    <Link to="/about" className="LinkName">Cadastra-se</Link>
+                                    <Link to="/Cadastro" className="LinkName">Cadastra-se</Link>
                                 </Col>
                         </Col>
                     </Row>

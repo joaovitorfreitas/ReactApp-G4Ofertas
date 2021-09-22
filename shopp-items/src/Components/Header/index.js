@@ -14,8 +14,8 @@ export const Header = () =>{
                     navbarScroll
                     >
                     <Navbar.Brand href="#"> <img src={LogoHeader} className="imgHeader"/> </Navbar.Brand>
-                    <Nav.Link href="#action1"><p className="colorTxtHeader">Alimentos</p></Nav.Link>
-                    <Nav.Link href="#action2"><p className="colorTxtHeader">Roupas</p></Nav.Link>
+                    <Nav.Link href="#"><p className="colorTxtHeader">Alimentos</p></Nav.Link>
+                    <Nav.Link href="#"><p className="colorTxtHeader">Roupas</p></Nav.Link>
                     <Form className="d-flex">
                         <FormControl
                             type="search"
@@ -24,8 +24,8 @@ export const Header = () =>{
                             aria-label="Procurar"
                         />
                     </Form>
-                    <Nav.Link href="#action1"><p className="colorTxtHeader">Cadastrar</p></Nav.Link>
-                    <Nav.Link href="#action2"><p className="colorTxtHeader">Login</p></Nav.Link>
+                    <Nav.Link href="http://localhost:3000/Cadastro"><p className="colorTxtHeader">Cadastrar</p></Nav.Link>
+                    <Nav.Link href="http://localhost:3000/Login"><p className="colorTxtHeader">Login</p></Nav.Link>
                     </Nav>
             </Navbar.Collapse>
         </Navbar>

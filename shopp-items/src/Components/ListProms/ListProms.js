@@ -13,15 +13,15 @@ class List extends Component {
             quantidade : ""
         }
     };
-
+    //mudar para quando consumir api
     listarProduto=()=>{
-       //if(se a url for alimentos)
+        //if()
         fetch('',{
             headers:{
                 'Content-Type':'application/json'
             }
         })
-        //else listar roupas
+        //else
     }
     
     ComponentDitMount(){
@@ -39,7 +39,7 @@ class List extends Component {
                             {
                             this.state.listaProduto.map((Produto) =>{
                                 return(
-                                    <a key={Produto.idProduto } href="#">
+                                    <a key={Produto.idProduto} href="#">
                                         <image src={Produto.imagem}/>
                                         <h1>{Produto.titulo}</h1>
                                         <p>{Produto.descricao}</p> 

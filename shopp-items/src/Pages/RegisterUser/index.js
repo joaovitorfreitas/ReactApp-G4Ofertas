@@ -54,8 +54,8 @@ export const Cad = () =>{
                     </Form>
 
                     <Col className="GroupPwdReg1">
-                                <p className="LetrasP">ja tem um cadastro?</p>
-                                <p className="LinkName">Faça seu login</p>
+                                <p className="LetrasP" >ja tem um cadastro?</p>
+                                <a className="LinkName" href="http://localhost:3000/Login">Faça seu login</a>
                             </Col>
                     </Col>
                      
