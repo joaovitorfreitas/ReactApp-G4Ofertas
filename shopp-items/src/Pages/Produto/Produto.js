@@ -1,4 +1,11 @@
 import React, { Component } from 'react'
+import Footer from '../../Components/Footer';
+import Header from '../../Components/Header';
+import Carousels from "../../Components/Carousels";
+import ListProdutosAlimentos  from "../../Components/ListAllP/ListP"
+import { Container,Row, Col } from "react-bootstrap";
+import  "./index.css"
+
 
 class Usuario extends Component {
     constructor(props){
@@ -45,28 +52,24 @@ class Usuario extends Component {
     render(){
         return(
             <>
-                <main>
-                <div>
-                    <div>
-                        {
-                            this.state.listaProduto.map((Produto) =>{
-                                return(
-                                    <div key={Produto.idProduto}>
-                                        <image src={Produto.imagem}/>
-                                        <div className="linha"></div>
-                                        <h1>{Produto.titulo}</h1>
-                                        <p>{Produto.descricao}</p> 
-                                        <p>{Produto.quantidade}</p>                                               
-                                    </div>                                         
-                                    )                                      
-                                }                                  
-                            )                                            
-                        }
-                        </div>
+                <Header />
+                <div className="Sizediv">
+                <Container className="ProdutoPageContainer">
+                    <Row>
+                        <Col className="NamedivCarousel"> <Carousels /> </Col>             
+                    </Row>
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                    <ListProdutosAlimentos />
+                </Container>
+                </div>
 
-                    <button onClick={this.ReservarProduto}>Reservar</button>
-                    </div> 
-                </main>
+                <Footer />
             </>
         )
     }

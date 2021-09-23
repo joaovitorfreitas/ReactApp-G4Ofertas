@@ -6,10 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Cad from './Pages/RegisterUser';
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
-
 import Produto from './Pages/Produto/Produto';
 import Perfil from './Pages/Perfil/Perfil';
+import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+
+
 
 
 const routing = (

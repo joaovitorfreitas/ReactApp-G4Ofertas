@@ -1,6 +1,7 @@
-import React from "react";
-
 import React, { Component } from 'react'
+import { Card} from "react-bootstrap";
+import Banana from "../../Assets/BannerProdutos/Banana.png"
+import "../../Pages/Produto/index.css"
 
 class List extends Component {
     constructor(props){
@@ -31,28 +32,18 @@ class List extends Component {
    render(){
        return(
            <>
-               <main>
-                    <div>
-                        <button>Ofertas</button>
-                        <h1>Todos os Alimentos</h1>
-                        <div>
-                            {
-                            this.state.listaProduto.map((Produto) =>{
-                                return(
-                                    <a key={Produto.idProduto } href="#">
-                                        <image src={Produto.imagem}/>
-                                        <h1>{Produto.titulo}</h1>
-                                        <p>{Produto.descricao}</p> 
-                                        <p>{Produto.quantidade}</p>
-                                        <p>{Produto.status}</p>                                               
-                                    </a>                                         
-                                    )                                      
-                                }                                  
-                            )                                            
-                            }                          
-                        </div>
-                    </div>
-               </main>
+               <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={Banana} />
+                <Card.Body>
+                    <Card.Title>Banana</Card.Title>
+                    <Card.Text>
+                    Unidade : 7
+                    </Card.Text>
+                    <Card.Text>
+                    Banana nanica 12$
+                    </Card.Text>
+                </Card.Body>
+                </Card >
            </>
        )
    } 
