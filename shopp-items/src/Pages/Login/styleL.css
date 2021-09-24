@@ -24,6 +24,9 @@
     justify-content: center;
     align-items: center;
 }
+.fundo{
+    margin-right:30px; 
+}
 
 
 .GroupPwdReg1{
@@ -60,7 +63,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
 }
 
 .RemoveSpacingCad{
