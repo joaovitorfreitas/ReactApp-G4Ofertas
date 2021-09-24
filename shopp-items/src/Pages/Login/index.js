@@ -1,8 +1,8 @@
-import React, { useState }from "react";
+import React, { useState, useEffect }from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import "./styleL.css"
 import { useHistory, Link } from "react-router-dom";
-import axios from 'axios';
+import api from "../../Services/BaseUrl/BaseUrl"
 import BannerLogin from "../../Assets/Banner/LoginBanner.png";
 
 export const Login = () =>{
@@ -17,24 +17,26 @@ export const Login = () =>{
 
     function fazerlogin(event) {
 
+
         event.preventDefault();
         
 
-        axios.post('https://www.macoratti.net.br/catalogo/api/contas/login', {
+        api.post('/v1/account/signin', {
         Email: email,
         Senha : pwd
         })
-        .then()
         .then(rs =>
-        {
-            if(rs.status === 200) {
-            localStorage.setItem('@jwt', rs.data.token);
+        {   
+            if(rs.data.sucesso === true) {
+            console.log(rs.data.data.token)
+            localStorage.setItem('@jwt', rs.data.data.token);
 
+            history.push("/Produto")
 
-            console.log("pronto")
+            }else if (rs.data.sucesso === false){         
+            console.log(rs.data.mensagem)
 
-            }else{         
-            console.log("Merda")
+            setError(rs.data.mensagem)
             }
 
         })
@@ -42,11 +44,12 @@ export const Login = () =>{
             console.log(error)
         })
 
-        console.log(email)
-        console.log(pwd)
         }
 
-    
+        useEffect(() => {
+            console.log(email)
+            console.log(pwd)
+          });
 
     
     return(
@@ -71,34 +74,38 @@ export const Login = () =>{
 
                         <Form
                             className="FormLoginWidht"
+                            onSubmit={fazerlogin}
                         >
 
                             <Form.Group className="mb-3" controlId="formBasicEmail" >
                                 <div className="GrouInputLogin">
                                     <Form.Label className="LetrasP">Email </Form.Label>
-                                    <Form.Control type="email" placeholder="Email" />
+                                    <input type="email" placeholder="Email" value={email}
+                                        onChange={(event) => setEmail(event.target.value) }
+                                    />
                                 </div>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <div className="GrouInputLogin"> 
                                     <Form.Label className="LetrasP">Senha </Form.Label>
-                                    <Form.Control type="password" placeholder="Senha" />
+                                    <input type="password" placeholder="Senha" value={pwd}
+                                    onChange={(event) => setPwd(event.target.value) }
+
+                                    />
                                 </div>
                     
+
                             </Form.Group>       
+                            <p style={{color: "red", marginLeft: 40}}> {error}</p>
+
                             <div className="BtnLoginDiv">
                                 <Button  type="submit" className="BtnLogin">
                                     Login
                                 </Button>
                             </div>
-                        </Form>
+                            </Form>
 
-
-                        <Col className="GroupPwdReg1">
-                                    <p className="LetrasP">Esqueceu a Senha?</p>
-                                    <Link to="/about" className="LinkName"> Clique Aqui</Link>
-                                </Col>
                                 <Col className="GroupPwdReg1">
                                     <p className="LetrasP">Não tem um Login?</p>
                                     <Link to="/Cadastro" className="LinkName">Cadastra-se</Link>

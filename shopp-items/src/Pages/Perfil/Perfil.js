@@ -1,5 +1,10 @@
 import { ButtonToolbar } from "react-bootstrap";
 import React, { Component } from 'react'
+import BannerPerfilUser from "../../Assets/Banner/BannerPerfilUser.png"
+import Footer from "../../Components/Footer";
+import Header from "../../Components/Header";
+import "../../Pages/Perfil/style.css"
+
 
 class Perfil extends Component {
     constructor(props){
@@ -52,34 +57,32 @@ class Perfil extends Component {
     
     render(){
         return(
-            <>
-                <main>
-                    <div> 
-                                <div>                  
-                                    <div>
-                                    {
-                                        this.state.listaUsuario.map((Usuario) =>{
-                                            return(
-                                                <div key={Usuario.idUsuario}>
-                                                    <div>{Usuario.nome}</div>
-                                                    <div>{Usuario.email}</div>                                              
-                                                </div>                                          
-                                            )                                     
-                                        })                                            
-                                        }
-                                </div>                               
-                                    <form onSubmit={this.alterarSenha}>
-                                        <input type="text" name="senha" value={this.state.senha} onChange={this.atualizeLinhaCampo}></input>
-                                        <button type="submit">Salvar</button>
-                                    </form>  
-                                </div>
-                        <div>
-                            
-                        </div>
+            <>  
+                <Header />
+                <div className="DivPerfilCtn">
+                    <div className="EsquerdaDivPerfilUser">   
+                        <form>
+                            <p style={{paddingBottom: 3, fontSize:19}}>Nome:</p>
+                            <input type="text" className="BtnSizePerfil"/>
 
+                            <p style={{paddingBottom: 3, fontSize:19}}>Email:</p>
+                            <input type="email" className="BtnSizePerfil"/>
 
-                        </div>
-                </main>
+                            <p style={{paddingBottom: 8, fontSize:19}}>Senha:</p>
+                            <input type="password" className="BtnSizePerfil"/>
+
+                            <div className="btnDivPerfilDown">
+                                <button className="BtnPerfilUsuarioDownPage">Salvar</button>                  
+                            </div>
+                        </form>
+                    </div>
+                    <div className="DireitaDivPerfilUser">
+                        <img
+                            src={BannerPerfilUser}
+                        />
+                    </div>
+                </div>
+                <Footer />
             </>
         );
     }

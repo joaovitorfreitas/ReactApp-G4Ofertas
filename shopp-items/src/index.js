@@ -6,10 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Cad from './Pages/RegisterUser';
+import Produto from './Pages/ProdutoAlimentos/Produto';
+import Perfil from './Pages/Perfil/Perfil';
+import perfilProduto from './Pages/PerfilProduto/index'
+import AtualizarProduto from './Pages/AtualizarProduto/index'
+import RegistrarProduto from './Pages/RegisterProducts/index'
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
-import Produto from './Pages/Produto/Produto';
-import Perfil from './Pages/Perfil/Perfil';
+
 
 
 const routing = (
@@ -21,6 +25,9 @@ const routing = (
         <Route path = "/Cadastro" component={Cad}/>
         <Route path = "/perfil" component={Perfil}/>
         <Route path = "/Produto" component={Produto}/>
+        <Route path = "/PerfilProduto" component={perfilProduto}/>
+        <Route path = "/AtualizarProduto" component={AtualizarProduto} />
+        <Route path ="/RegistrarProdutos" component={RegistrarProduto} />
       </Switch>
   </Router>
 )
