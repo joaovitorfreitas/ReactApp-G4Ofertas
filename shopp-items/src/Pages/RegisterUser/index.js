@@ -2,12 +2,47 @@ import React, { useState }from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import "./styleR.css"
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
 import BannerLogin from "../../Assets/Banner/CadastroBanner.png";
+import api from "../../Services/BaseUrl/BaseUrl"
 
-export const Cad = () =>{
+export const Cadastro = () =>{
 
-    let history = useHistory();
+
+
+    const [Email, setEmail] = useState("")
+    const [Nome, SetNome] = useState("")
+    const [Senha, setSenha] = useState("")
+    const [TipoUser, SetTipoUser] = useState(0)
+    const [error, setError] = useState("")
+
+    function SubmiteItens( event ){
+
+        event.preventDefault()
+
+
+        api.post("/v1/account/signup",{
+            nome: "jooaoa@vdlffffff@gmail.com",
+            email: "joao vitor",
+            senha: "1235",
+            tipoUsuario: 0
+        })
+        .then(
+            response => {
+                console.log(response)
+                if(response.data.sucesso === false){
+                    console.log("é falso")
+
+                    setError(response.data.data[0].message)
+
+                }
+            }
+        )   
+        .catch(
+            error => {
+                console.log(error.response)
+            }
+        )
+    }
 
     
     return(
@@ -27,7 +62,7 @@ export const Cad = () =>{
                     <div>
                         <h1 className="LetrasG">Cadastro</h1>
                     </div> 
-                    <Form >
+                    <Form onSubmit={SubmiteItens}>
                         <Form.Group className="LetrasP" controlId="formBasicEmail">
                             <Form.Label className="LetrasP">Nome: </Form.Label>
                             <Form.Control type="text" placeholder="Nome" />
@@ -66,4 +101,4 @@ export const Cad = () =>{
     );
 }
 
-export default Cad;
+export default Cadastro;

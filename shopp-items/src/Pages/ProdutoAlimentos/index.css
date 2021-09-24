@@ -1,0 +1,41 @@
+.Sizediv{
+    background-color: #EDEAF2;
+}
+
+.ProdutoPageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #EDEAF2;
+    margin: 20; 
+    max-width: 1200px;
+}
+
+h1{
+    margin: 20px;
+}
+
+.card {
+    background-color: #733BE3;
+    margin: 10px;
+    color: white;
+    width: 160px;
+    height: 290px;
+    border-radius: 7px;
+}
+
+.card-img-top {
+    width: 230px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 168px;
+    height: 56px;
+    background: #F5B100;
+    border-radius: 15px;
+    color: white;
+    margin: 20px;
+}

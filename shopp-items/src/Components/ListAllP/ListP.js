@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card} from "react-bootstrap";
 import Banana from "../../Assets/BannerProdutos/Banana.png"
-import "../../Pages/Produto/index.css"
+import "../../Pages/ProdutoAlimentos/index.css"
 
 class List extends Component {
     constructor(props){
