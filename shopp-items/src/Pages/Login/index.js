@@ -27,8 +27,6 @@ export const Login = () =>{
         })
         .then(rs =>
         {   
-         
-
             if(rs.data.sucesso === true) {
             console.log(rs.data.data.token)
             localStorage.setItem('@jwt', rs.data.data.token);
@@ -37,6 +35,8 @@ export const Login = () =>{
 
             }else if (rs.data.sucesso === false){         
             console.log(rs.data.mensagem)
+
+            setError(rs.data.mensagem)
             }
 
         })
@@ -47,7 +47,6 @@ export const Login = () =>{
         }
 
         useEffect(() => {
-            // Update the document title using the browser API
             console.log(email)
             console.log(pwd)
           });
@@ -96,19 +95,17 @@ export const Login = () =>{
                                     />
                                 </div>
                     
+
                             </Form.Group>       
+                            <p style={{color: "red", marginLeft: 40}}> {error}</p>
+
                             <div className="BtnLoginDiv">
                                 <Button  type="submit" className="BtnLogin">
                                     Login
                                 </Button>
                             </div>
-                        </Form>
+                            </Form>
 
-
-                        <Col className="GroupPwdReg1">
-                                    <p className="LetrasP">Esqueceu a Senha?</p>
-                                    <Link to="/about" className="LinkName"> Clique Aqui</Link>
-                                </Col>
                                 <Col className="GroupPwdReg1">
                                     <p className="LetrasP">Não tem um Login?</p>
                                     <Link to="/Cadastro" className="LinkName">Cadastra-se</Link>

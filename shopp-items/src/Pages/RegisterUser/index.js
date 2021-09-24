@@ -12,28 +12,41 @@ export const Cadastro = () =>{
     const [Email, setEmail] = useState("")
     const [Nome, SetNome] = useState("")
     const [Senha, setSenha] = useState("")
-    const [TipoUser, SetTipoUser] = useState(0)
+    const [Decisao, SetTipoDecisao] = useState([])
     const [error, setError] = useState("")
+
+    let history = useHistory();
+
+    
 
     function SubmiteItens( event ){
 
         event.preventDefault()
+        
+        setError("")
+
+        console.log(Email)
+        console.log(Nome)
+        console.log(Senha)
+        console.log(Decisao)
 
 
         api.post("/v1/account/signup",{
-            nome: "jooaoa@vdlffffff@gmail.com",
-            email: "joao vitor",
-            senha: "1235",
-            tipoUsuario: 0
+            nome: Nome,
+            email: Email,
+            senha: Senha,
+            tipoUsuario: 1
         })
         .then(
             response => {
                 console.log(response)
-                if(response.data.sucesso === false){
+                if(response.data.sucesso === true){
                     console.log("é falso")
 
-                    setError(response.data.data[0].message)
 
+                    history.push("/Login");
+                }else{
+                    setError(response.data.mensagem)
                 }
             }
         )   
@@ -65,23 +78,48 @@ export const Cadastro = () =>{
                     <Form onSubmit={SubmiteItens}>
                         <Form.Group className="LetrasP" controlId="formBasicEmail">
                             <Form.Label className="LetrasP">Nome: </Form.Label>
-                            <Form.Control type="text" placeholder="Nome" />
+                            <input type="text" placeholder="Nome" value={Nome}
+                                onChange={(event) => SetNome(event.target.value)}
+                                className={"InputLoginTela"}
+                            />
                         </Form.Group>
 
                         <Form.Group className="LetrasP" controlId="formBasicEmail">
                             <Form.Label className="LetrasP">Email: </Form.Label>
-                            <Form.Control type="email" placeholder="Email" />
+                            <input type="email" placeholder="Email" value={Email}
+                                onChange={(event) => setEmail(event.target.value)}
+                                className={"InputLoginTela"}
+
+                            />
                         </Form.Group>
 
                         <Form.Group className="LetrasP" controlId="formBasicPassword">
                             <Form.Label className="LetrasP">Senha: </Form.Label>
-                            <Form.Control type="password" placeholder="Senha" />
+                            <input type="password" placeholder="Senha" value={Senha}
+                                onChange={(event) => setSenha(event.target.value)}
+                                className={"InputLoginTela"}
+                            />
                         </Form.Group> 
 
+                        
                         <Form.Group className="LetrasP" controlId="formBasicPassword">
+                                    <p className="LetrasP">Status</p>
+                                    <select id="cars" name="cadastro"
+                                        onChange={(event) => SetTipoDecisao(event.target.value)}
+                                    >
+                                        <option value={0}>Colaborador</option>
+                                        <option value={1}>Cliente</option>
+                                    </select>
+                        </Form.Group> 
+
+
+                        {/* <Form.Group className="LetrasP" controlId="formBasicPassword">
                             <Form.Label className="LetrasP">Confirmar Senha: </Form.Label>
                             <Form.Control type="password" placeholder="Confirmar Senha" />
-                        </Form.Group>    
+                        </Form.Group>     
+                        */}
+
+                        <p style={{color:"red", marginTop:25}}>{error}</p>
 
                         <Button className="btnCad" variant="primary" type="submit">
                             Cadastro
